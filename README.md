@@ -30,3 +30,7 @@ GitHub Releases：https://github.com/ouc-ocean-group/oucthesis/releases
 如果导师或者院系在格式上有额外的要求，请将老师的邮件转发给模板作者。
 作者会考虑增加接口以便修改格式。
 
+
+## 鸣谢
+
+感谢 [@USTCthesis](https://github.com/ustctug/ustcthesis), [@THUthesis](https://github.com/ustctug/ustcthesis) 提供的诸多参考！
