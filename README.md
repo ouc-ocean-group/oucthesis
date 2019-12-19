@@ -7,6 +7,9 @@
 
 **由于本校论文格式要求过于粗略，作者综合了之前师兄师姐的论文和官方要求，编写出此版本，请自行衡量承担使用风险。**
 
+## 下载地址
+GitHub Releases：https://github.com/ouc-ocean-group/oucthesis/releases
+
 详细使用方法请见 `main.tex`
 
 ## 遇到可能的问题
