@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2018)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: /Users/geo/Dropbox/Documents/OUC_thesis_Templ/.texpadtmp/main.aux
+The style file: ../oucauthoryear.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Database file #1: ../cite.bib
+You've used 3 entries,
+            4079 wiz_defined-function locations,
+            875 strings with 6525 characters,
+and the built_in function-call counts, 5384 in all, are:
+= -- 168
+> -- 462
+< -- 676
++ -- 242
+- -- 30
+* -- 65
+:= -- 838
+add.period$ -- 10
+call.type$ -- 3
+change.case$ -- 4
+chr.to.int$ -- 196
+cite$ -- 3
+duplicate$ -- 65
+empty$ -- 156
+format.name$ -- 22
+if$ -- 1370
+int.to.chr$ -- 1
+int.to.str$ -- 4
+missing$ -- 0
+newline$ -- 25
+num.names$ -- 9
+pop$ -- 198
+preamble$ -- 1
+purify$ -- 3
+quote$ -- 0
+skip$ -- 435
+stack$ -- 0
+substring$ -- 263
+swap$ -- 4
+text.length$ -- 23
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 27
+warning$ -- 0
+while$ -- 30
+width$ -- 0
+write$ -- 51
