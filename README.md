@@ -33,4 +33,4 @@ GitHub Releases：https://github.com/ouc-ocean-group/oucthesis/releases
 
 ## 鸣谢
 
-感谢 [@USTCthesis](https://github.com/ustctug/ustcthesis), [@THUthesis](https://github.com/ustctug/ustcthesis) 提供的诸多参考！
+感谢 [@USTCthesis](https://github.com/ustctug/ustcthesis), [@THUthesis](https://github.com/xueruini/thuthesis) 提供的诸多参考！
