@@ -4,7 +4,7 @@
 %% The original source files were:
 %% 
 %% Copyright
-%% USTC (C) 2015-2019 Created by Zeping Lee <zepinglee AT gmail.com>
+%% ouc (C) 2015-2019 Created by Zeping Lee <zepinglee AT gmail.com>
 %% OUC version modified my Geo <geoffreychen777 AT gmail.com>
 %% This file may be distributed and/or modified under the
 %% conditions of the LaTeX Project Public License, either version 1.3c
@@ -24,6 +24,10 @@
 \newif\ifouc@pdf
 \DeclareOption{print}{\ouc@pdffalse}
 \DeclareOption{pdf}{\ouc@pdftrue}
+
+\newif\ifouc@enmac
+\ouc@enmacfalse
+\DeclareOption{enmac}{\ouc@enmactrue}
 
 \PassOptionsToClass{openany}{ctexbook}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
@@ -54,12 +58,37 @@
 \RequirePackage{dashrule}
 \RequirePackage{algorithm}
 \RequirePackage{algorithmicx}
-\PassOptionsToPackage{sort&compress}{natbib}
 \RequirePackage{natbib}
+\PassOptionsToPackage{sort&compress}{natbib}
 \ifouc@pdf
 \RequirePackage{hyperref}
 \else
 \fi
+
+% ===============================================
+% Changable parameters
+\newcommand\ouc@atendpackage{\csname ctex_at_end_package:nn\endcsname}
+\ouc@atendpackage{hyperref}{
+  \hypersetup{
+    bookmarksnumbered  = true,
+    bookmarksopen      = true,
+    bookmarksopenlevel = 1,
+    linktoc            = all,
+    unicode            = true,
+    psdextra           = true,
+  }
+  \ifouc@pdf
+    \hypersetup{
+      colorlinks = true,
+      allcolors  = cyan,
+    }
+  \else
+    \hypersetup{hidelinks}
+  \fi
+}
+
+
+
 % ===============================================
 % Custom Command
 
@@ -82,6 +111,10 @@
 
 \newcommand\ouc@strifeq{\csname str_if_eq_x:nnTF\endcsname}
 \newcommand\ouc@fontset{\csname g__ctex_fontset_tl\endcsname}
+\ifouc@enmac
+  \renewcommand\ouc@fontset{mac}
+\fi
+
 \ouc@strifeq{\ouc@fontset}{fandol}{
   \setmainfont[
     Extension      = .otf,
@@ -274,7 +307,7 @@
   \def\ouc@enkeywords{#1}
 }
 % ===============================================
-% Default Page Style
+% Define Page Style
 
 % Ackonwlegment
 \newcommand\ouc@makeacknowledgment{
@@ -373,6 +406,8 @@
   }
 \newcommand\pagenumberingnoreset[1]{\gdef\thepage{\csname @#1\endcsname\c@page}}
 
+
+% Abstract
 \let\standardclearpage\clearpage
 \newenvironment{abstract}{%
   \clearpage
@@ -413,6 +448,8 @@
   \pagestyle{title}
   \pagenumberingnoreset{arabic}
 }
+
+% Toc
 \renewcommand\tableofcontents{%
   \pagestyle{empty}
   \chapter*{\contentsname}%
@@ -445,7 +482,6 @@
 
 % ===============================================
 % Main Content Format 
-
 
 \renewcommand\chapter{%
   \if@openright\cleardoublepage\else\clearpage\fi
@@ -491,22 +527,25 @@
     },
   }
 }
+
+% Caption Stype
 \renewcommand{\thetable}{\thechapter-\arabic{table}}
 \renewcommand{\thefigure}{\thechapter-\arabic{figure}}
-\numberwithin{algorithm}{chapter}
+\counterwithin{algorithm}{chapter}
+\renewcommand{\thealgorithm}{\thechapter-\arabic{algorithm}}
+\floatname{algorithm}{算法}
 \DeclareCaptionLabelSeparator{space}{ }
 \captionsetup{
    labelsep=space
 }
 
 \renewcommand{\theequation}{\arabic{chapter}-\arabic{equation}}
-
 \RequirePackage{mathtools}
 \newtagform{test}[]{式（}{）}
 \usetagform{test}
 
 % ===============================================
-% After Content Format 
+% Tail Content Format 
 \newcommand\makeafter{
   \clearpage
   \ctexset{
