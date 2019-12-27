@@ -1,4 +1,4 @@
-# 中国海洋大学硕士学位论文 LaTeX 模板
+# 中国海洋大学硕士博士学位论文 LaTeX 模板
 [![GitHub release](https://img.shields.io/github/release/ouc-ocean-group/oucthesis/all.svg)](https://github.com/ouc-ocean-group/oucthesis/releases/latest)
 ## 简介
 本项目是信息科学与工程学院 [OceanGroup VisionLab](https://og.oucvision.top) 编写的中国海洋大学的硕士学位论文 LaTeX 模板 oucthesis，按照最新版的
