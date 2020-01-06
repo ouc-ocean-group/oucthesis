@@ -95,7 +95,7 @@
 % ===============================================
 % Word Count
 \newcommand{\wordcount}[0]{%
-	\immediate\write18{texcount -1 -sum \jobname.tex > words.count }%
+	\immediate\write18{texcount -1 -sum main.tex > words.count }%
 	\input{words.count}%
 }
 
