@@ -94,7 +94,10 @@
 
 % ===============================================
 % Word Count
-
+\newcommand{\wordcount}[0]{%
+	\immediate\write18{texcount -1 -sum \jobname.tex > words.count }%
+	\input{words.count}%
+}
 
 % ===============================================
 % Custom Command
@@ -262,7 +265,9 @@
 \renewcommand\headrulewidth{0.5\p@}
 
 % ===============================================
-% Header Format 
+% Header Format
+\newcommand\ouc@wordcount{\wordcount}
+
 \newcommand\ouc@hf@font{\fontsize{9\bp@}{12\bp@}\selectfont}
 \newcommand\ouc@header{\@title}
 \fancypagestyle{title}{%
@@ -270,7 +275,7 @@
   \fancyhead[C]{\ouc@hf@font\ouc@header}%
   \fancyfoot[C]{\ouc@hf@font\thepage}%
   \ifouc@count
-    \fancyfoot[R]{\color{gray}\ouc@hf@font \splice{texcount -sum -1 main.tex}}%
+    \fancyfoot[R]{\color{gray}\ouc@hf@font \ouc@wordcount}%
   \fi
 }
 \fancypagestyle{plain}{%
