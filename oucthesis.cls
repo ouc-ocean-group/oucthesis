@@ -29,6 +29,10 @@
 \ouc@enmacfalse
 \DeclareOption{enmac}{\ouc@enmactrue}
 
+\newif\ifouc@count
+\ouc@countfalse
+\DeclareOption{count}{\ouc@counttrue}
+
 \PassOptionsToClass{openany}{ctexbook}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
 \ExecuteOptions{print}
@@ -59,6 +63,7 @@
 \RequirePackage{algorithm}
 \RequirePackage{algorithmicx}
 \RequirePackage{natbib}
+\RequirePackage{bashful}
 \PassOptionsToPackage{sort&compress}{natbib}
 \ifouc@pdf
 \RequirePackage{hyperref}
@@ -87,6 +92,8 @@
   \fi
 }
 
+% ===============================================
+% Word Count
 
 
 % ===============================================
@@ -262,6 +269,9 @@
   \fancyhf{}%
   \fancyhead[C]{\ouc@hf@font\ouc@header}%
   \fancyfoot[C]{\ouc@hf@font\thepage}%
+  \ifouc@count
+    \fancyfoot[R]{\color{gray}\ouc@hf@font \splice{texcount -sum -1 \jobname.tex}}%
+  \fi
 }
 \fancypagestyle{plain}{%
   \fancyhf{}%
@@ -308,7 +318,6 @@
 }
 % ===============================================
 % Define Page Style
-
 % Ackonwlegment
 \newcommand\ouc@makeacknowledgment{
   \ouc@setchinese
