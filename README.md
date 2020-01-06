@@ -12,6 +12,9 @@ GitHub Releases：https://github.com/ouc-ocean-group/oucthesis/releases
 
 详细使用方法请见 `main.tex`
 
+## 字数统计
+本模版使用 `texcount` 进行字数统计。请保证 tex 文件名为 `main.tex`。Windows 用户如想使用字数统计，请先到 [http://strawberryperl.com/](http://strawberryperl.com/) 安装 Perl。
+
 ## 遇到可能的问题
 
 如果发现模板有问题，请按照以下步骤操作：
