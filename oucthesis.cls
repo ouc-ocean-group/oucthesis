@@ -270,7 +270,7 @@
   \fancyhead[C]{\ouc@hf@font\ouc@header}%
   \fancyfoot[C]{\ouc@hf@font\thepage}%
   \ifouc@count
-    \fancyfoot[R]{\color{gray}\ouc@hf@font \splice{texcount -sum -1 \jobname.tex}}%
+    \fancyfoot[R]{\color{gray}\ouc@hf@font \splice{texcount -sum -1 main.tex}}%
   \fi
 }
 \fancypagestyle{plain}{%
