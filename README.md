@@ -3,7 +3,7 @@
 ## 简介
 本项目是信息科学与工程学院 [OceanGroup VisionLab](https://og.oucvision.top) 编写的中国海洋大学的硕博士学位论文 LaTeX 模板 oucthesis，按照最新版的
 《[中国海洋大学研究生学位论文书写格式统一要求](http://grad.ouc.edu.cn/39/69/c1660a14697/page.psp)》
-的要求编写，测试兼容最新版的 Texpad (Mac)、Overleaf。
+的要求编写，测试兼容最新版的 Texpad (Mac)、TexStudio、Overleaf。
 
 **由于本校论文格式要求过于粗略，作者综合了之前师兄师姐的论文和官方要求，编写出此版本，请自行衡量承担使用风险。**
 
@@ -13,7 +13,18 @@ GitHub Releases：https://github.com/ouc-ocean-group/oucthesis/releases
 详细使用方法请见 `main.tex`
 
 ## 字数统计
-本模版使用 `texcount` 进行字数统计。请保证 tex 文件名为 `main.tex`。Windows 用户如想使用字数统计，请先到 [http://strawberryperl.com/](http://strawberryperl.com/) 安装 Perl。
+本模版使用 `texcount` 进行字数统计。请保证 tex 文件名为 `main.tex`。在编译选项加上：
+
+```
+--shell-escape
+```
+比如 TexStudio 设置中需要填写：
+
+```
+xelatex.exe -synctex=1 -interaction=nonstopmode --shell-escape %.tex
+```
+
+Windows 用户如想使用字数统计，请先到 [http://strawberryperl.com/](http://strawberryperl.com/) 安装 Perl。
 
 ## 遇到可能的问题
 
