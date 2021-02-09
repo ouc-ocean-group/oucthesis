@@ -28,6 +28,10 @@ xelatex.exe -synctex=1 -interaction=nonstopmode --shell-escape %.tex
 
 Windows 用户如想使用字数统计，请先到 [http://strawberryperl.com/](http://strawberryperl.com/) 安装 Perl。
 
+## Overleaf
+
+请将编译器设置为 XeLaTex，TeX Live 版本选择 2019。
+
 ## 遇到可能的问题
 
 如果发现模板有问题，请按照以下步骤操作：
