@@ -38,6 +38,7 @@
 \ExecuteOptions{print}
 \ProcessOptions\relax
 
+
 \PassOptionsToClass{scheme=chinese}{ctexbook}
 \PassOptionsToPackage{quiet}{xeCJK}
 \LoadClass[UTF8,a4paper,zihao=-4]{ctexbook}[2017/04/01]
@@ -64,11 +65,14 @@
 \RequirePackage{algorithmicx}
 \RequirePackage{natbib}
 \RequirePackage{bashful}
+\RequirePackage{xeCJKfntef}
+\xeCJKsetup { underline/skip = false}
 \PassOptionsToPackage{sort&compress}{natbib}
 \ifouc@pdf
 \RequirePackage{hyperref}
 \else
 \fi
+
 
 % ===============================================
 % Changable parameters
@@ -119,13 +123,12 @@
 % ===============================================
 % Fonts Setting
 
-\newcommand\ouc@strifeq{\csname str_if_eq_x:nnTF\endcsname}
-\newcommand\ouc@fontset{\csname g__ctex_fontset_tl\endcsname}
+\newcommand{\ouc@fontset}{\csname g__ctex_fontset_tl\endcsname}
 \ifouc@enmac
-  \renewcommand\ouc@fontset{mac}
+  \renewcommand{\ouc@fontset}{mac}
 \fi
 
-\ouc@strifeq{\ouc@fontset}{fandol}{
+\ifthenelse{\equal{\ouc@fontset}{fandol}}{
   \setmainfont[
     Extension      = .otf,
     UprightFont    = *-regular,
@@ -156,13 +159,14 @@
 }{
   \setmainfont{Times New Roman}
   \setsansfont{Arial}
-  \ouc@strifeq{\ouc@fontset}{mac}{
+  \ifthenelse{\equal{\ouc@fontset}{mac}}{
     \setmonofont[Scale=MatchLowercase]{Menlo}
   }{
     \setmonofont[Scale=MatchLowercase]{Courier New}
   }
 }
-\ouc@strifeq{\ouc@fontset}{mac}{
+
+\ifthenelse{\equal{\ouc@fontset}{mac}}{
   \setCJKmainfont[
        UprightFont = * Light,
           BoldFont = * Bold,
@@ -179,7 +183,7 @@
   \xeCJKsetwidth{‘’“”}{1em}
 }{
   \xeCJKsetup{EmboldenFactor=2}
-  \ouc@strifeq{\ouc@fontset}{windows}{
+  \ifthenelse{\equal{\ouc@fontset}{windows}}{
     \IfFileExists{C:/bootfont.bin}{
       \setCJKmainfont[AutoFakeBold,ItalicFont=KaiTi_GB2312]{SimSun}
       \setCJKfamilyfont{zhkai}[AutoFakeBold]{KaiTi_GB2312}
@@ -191,7 +195,7 @@
     \setCJKfamilyfont{zhsong}[AutoFakeBold]{SimSun}
     \setCJKfamilyfont{zhhei}[AutoFakeBold]{SimHei}
   }{
-    \ouc@strifeq{\ouc@fontset}{adobe}{
+    \ifthenelse{\equal{\ouc@fontset}{adobe}}{
       \setCJKmainfont[
         AutoFakeBold = true,
         ItalicFont   = AdobeKaitiStd-Regular,
@@ -350,15 +354,15 @@
     \vspace{140\bp@}
     \parbox[t][][t]{\textwidth}{%
       \raggedleft\songti\normalsize\selectfont
-      学位论文完成日期：\uline{\makebox[30mm]{}}\par
-      指导教师签字：\uline{\makebox[30mm]{}}\par
-      答辩委员会成员签字：\uline{\makebox[30mm]{}}\par
-      \uline{\makebox[30mm]{}}\par
-      \uline{\makebox[30mm]{}}\par
-      \uline{\makebox[30mm]{}}\par
-      \uline{\makebox[30mm]{}}\par
-      \uline{\makebox[30mm]{}}\par
-      \uline{\makebox[30mm]{}}\par
+      学位论文完成日期：\underline{\hspace{30mm}}\par
+      指导教师签字：\underline{\hspace{30mm}}\par
+      答辩委员会成员签字：\underline{\hspace{30mm}}\par
+      \underline{\hspace{30mm}}\par
+      \underline{\hspace{30mm}}\par
+      \underline{\hspace{30mm}}\par
+      \underline{\hspace{30mm}}\par
+      \underline{\hspace{30mm}}\par
+      \underline{\hspace{30mm}}\par
 
     }\par
   \end{titlepage}
@@ -377,7 +381,7 @@
       \centering\bf\large
        独\zhspace[1]创\zhspace[1]声\zhspace[1]明 \par
     }
-    本人声明所呈交的学位论文是本人在导师指导下进行的研究工作及取得的研究成果。据我所知，除了文中特别加以标注和致谢的地方外，论文中不包含其他人已经发表或撰写过的研究成果，也不包含未获得\uline{（注：如没有其他需要特别声明的，本栏可空）}或其他教育机构的学位或证书使用过的材料。与我一同工作的同志对本研究所做的任何贡献均已在论文中作了明确的说明并表示谢意。
+    本人声明所呈交的学位论文是本人在导师指导下进行的研究工作及取得的研究成果。据我所知，除了文中特别加以标注和致谢的地方外，论文中不包含其他人已经发表或撰写过的研究成果，也不包含未获 \CJKunderline{（注：如没有其他需要特别声明的，本栏可空）}或其他教育机构的学位或证书使用过的材料。与我一同工作的同志对本研究所做的任何贡献均已在论文中作了明确的说明并表示谢意。
     \par
     \vspace{4em}
     \rightline{学位论文作者签名：\zhspace[5]签字日期：\zhspace[2]年\zhspace[1.5]月\zhspace[1.5]日\ }

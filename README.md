@@ -3,9 +3,9 @@
 ## 简介
 本项目是信息科学与工程学院 [OceanGroup VisionLab](https://og.oucvision.top) 编写的中国海洋大学的硕博士学位论文 LaTeX 模板 oucthesis，按照最新版的
 《[中国海洋大学研究生学位论文书写格式统一要求](http://grad.ouc.edu.cn/39/69/c1660a14697/page.psp)》
-的要求编写，测试兼容最新版的 Texpad (Mac)、TexStudio、Overleaf。(2020年初)
+的要求编写，测试兼容最新版的 Texpad (Mac)、TexStudio、Overleaf。(2021年末)
 
-对于硕士生，不是很建议使用，因为在作者毕业的那一年，查重归档等各个程序都要求提交Word版论文。博士的话不是很清楚。
+对于硕士生，在作者毕业的那一年，查重归档等各个程序都要求提交Word版论文，现在的情况未知。博士的话据说信院等已经开始接受LaTex了。（2021年底）
 
 **由于本校论文格式要求过于粗略，作者综合了之前师兄师姐的论文和官方要求，编写出此版本，请自行衡量承担使用风险。**
 
@@ -30,7 +30,7 @@ Windows 用户如想使用字数统计，请先到 [http://strawberryperl.com/](
 
 ## Overleaf
 
-请将编译器设置为 XeLaTex，TeX Live 版本选择 2019。
+请将编译器设置为 XeLaTex
 
 ## 遇到可能的问题
 
