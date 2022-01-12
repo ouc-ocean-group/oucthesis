@@ -295,7 +295,7 @@
 \ctexset{
   chapter = {
     name        = {,},
-    format      = \centering\sffamily\bfseries\fontsize{16\bp@}{26.67\bp@}\selectfont,
+    format      = \centering\sffamily\fontsize{16\bp@}{26.67\bp@}\selectfont,
     nameformat  = {},
     number      = \thechapter,
     aftername   = \hspace{\ccwd},
@@ -335,7 +335,8 @@
     {\sffamily\fontsize{18\bp@}{20\bp@}\ouc@mythanks}
     \parbox[t][0.6cm][t]{\textwidth}{%
       \raggedleft\sffamily\fontsize{18\bp@}{20\bp@}\selectfont
-      \hdashrule[0.5ex]{5cm}{1.5pt}{1.5mm 1pt}\@author\par}\par
+      \vspace{1em}
+      \hdashrule[0.5ex]{2.4cm}{1.5pt}{1.5mm 1pt}\@author\par}\par
   \end{titlepage}
   \ifouc@pdf
   \else
@@ -351,18 +352,18 @@
     \vspace*{36\bp@}
     \sffamily\fontsize{18\bp@}{20\bp@}\@title
 
-    \vspace{140\bp@}
+    \vspace{360\bp@}
     \parbox[t][][t]{\textwidth}{%
       \raggedleft\songti\normalsize\selectfont
-      学位论文完成日期：\underline{\hspace{30mm}}\par
-      指导教师签字：\underline{\hspace{30mm}}\par
-      答辩委员会成员签字：\underline{\hspace{30mm}}\par
-      \underline{\hspace{30mm}}\par
-      \underline{\hspace{30mm}}\par
-      \underline{\hspace{30mm}}\par
-      \underline{\hspace{30mm}}\par
-      \underline{\hspace{30mm}}\par
-      \underline{\hspace{30mm}}\par
+      学位论文完成日期：\uline{\makebox[40mm]{}}\par
+      指导教师签字：\uline{\makebox[40mm]{}}\par
+      答辩委员会成员签字：\uline{\makebox[40mm]{}}\par
+      \uline{\makebox[40mm]{}}\par
+      \uline{\makebox[40mm]{}}\par
+      \uline{\makebox[40mm]{}}\par
+      \uline{\makebox[40mm]{}}\par
+      \uline{\makebox[40mm]{}}\par
+      \uline{\makebox[40mm]{}}\par
 
     }\par
   \end{titlepage}
@@ -379,6 +380,7 @@
   \begin{titlepage}%
     {
       \centering\bf\large
+      \vspace*{24\bp@}
        独\zhspace[1]创\zhspace[1]声\zhspace[1]明 \par
     }
     本人声明所呈交的学位论文是本人在导师指导下进行的研究工作及取得的研究成果。据我所知，除了文中特别加以标注和致谢的地方外，论文中不包含其他人已经发表或撰写过的研究成果，也不包含未获 \CJKunderline{（注：如没有其他需要特别声明的，本栏可空）}或其他教育机构的学位或证书使用过的材料。与我一同工作的同志对本研究所做的任何贡献均已在论文中作了明确的说明并表示谢意。
@@ -394,8 +396,8 @@
       学位论文版权使用授权书 \par
     }
     本学位论文作者完全了解学校有关保留、使用学位论文的规定，并同意以下事项：\par
-    1.学校有权保留并向国家有关部门或机构送交论文的复印件和磁盘，允许论文被查阅和借阅。\par
-    2.学校可以将学位论文的全部或部分内容编入有关数据库进行检索，可以采用影印、缩印或扫描等复制手段保存、汇编学位论文。同时授权清华大学“中国学术期刊(光盘版)电子杂志社”用于出版和编入CNKI《中国知识资源总库》，授权中国科学技术信息研究所将本学位论文收录到《中国学位论文全文数据库》。（保密的学位论文在解密后适用本授权书）
+    1、学校有权保留并向国家有关部门或机构送交论文的复印件和磁盘，允许论文被查阅和借阅。\par
+    2、学校可以将学位论文的全部或部分内容编入有关数据库进行检索，可以采用影印、缩印或扫描等复制手段保存、汇编学位论文。同时授权清华大学“中国学术期刊(光盘版)电子杂志社”用于出版和编入CNKI《中国知识资源总库》，授权中国科学技术信息研究所将本学位论文收录到《中国学位论文全文数据库》。（保密的学位论文在解密后适用本授权书）
     \par
     \vspace{4em}
     学位论文作者签名：\zhspace[10]导师签字：\zhspace[8] \par
@@ -434,14 +436,16 @@
   \ouc@setchinese
   \begin{center}
     \fontsize{16\bp@}{26.67\bp@}\sffamily\@title
+    \par
+    \vspace{1em}
+    {摘\zhspace[1]要}
   \end{center}
   \let\clearpage\relax
-  \ouc@chapter{摘\zhspace[1]要}
   \let\clearpage\standardclearpage
   \vspace{1em}
 }{
   \par\null\par\noindent\hangindent=4\ccwd\relax
-  \sffamily\textbf{关键词：\ouc@keywords}
+  \sffamily\textbf{关键词：}\ouc@keywords
   \clearpage
   \pagestyle{title}
   \pagenumberingnoreset{arabic}
@@ -454,20 +458,23 @@
   \ouc@setenglish
   \begin{center}
     \fontsize{16\bp@}{26.67\bp@}\sffamily\ouc@entitle
+    \par
+    \vspace{1em}
+    {Abstract}
   \end{center}
   \let\clearpage\relax
-  \ouc@chapter[Abstract]{Abstract}%
   \let\clearpage\standardclearpage
   \vspace{1em}
 }{
   \par\null\par\noindent\hangindent=5.3em\relax
-  \textbf{Key Words: \ouc@enkeywords}
+  \textbf{Key Words:} \ouc@enkeywords
   \clearpage
   \pagestyle{title}
   \pagenumberingnoreset{arabic}
 }
 
 % Toc
+\renewcommand{\contentsname}{\large 目\quad 录}
 \renewcommand\tableofcontents{%
   \pagestyle{empty}
   \chapter*{\contentsname}%
@@ -513,7 +520,7 @@
   \setcounter{page}{1}
   \ctexset{
     chapter = {
-      format      = \sffamily\bfseries\fontsize{16\bp@}{26.67\bp@}\selectfont,
+      format      = \sffamily\fontsize{16\bp@}{26.67\bp@}\selectfont,
       aftername   = \zhspace[0.5],
       beforeskip  = 1em,
       afterskip   = 1.8em,
@@ -569,7 +576,7 @@
   \ctexset{
     chapter = {
       name        = {,},
-      format      = \centering\sffamily\bfseries\fontsize{14\bp@}{25.67\bp@}\selectfont,
+      format      = \centering\sffamily\fontsize{14\bp@}{25.67\bp@}\selectfont,
       nameformat  = {},
       number      = \thechapter,
       aftername   = \hspace{\ccwd},
@@ -579,7 +586,7 @@
     },
     section = {
       name        = {,},
-      format      = \centering\sffamily\bfseries\normalsize\selectfont,
+      format      = \centering\sffamily\normalsize\selectfont,
       nameformat  = {},
       number      = \thechapter,
       aftername   = \hspace{\ccwd},
